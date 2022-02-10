@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="WindowController">
+            <connections>
+                <outlet property="imageView" destination="163" id="177"/>
+                <outlet property="progressIndicator" destination="410" id="413"/>
+                <outlet property="quantizationSlider" destination="287" id="395"/>
+                <outlet property="stylizationSlider" destination="284" id="396"/>
+                <outlet property="window" destination="1" id="3"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application"/>
+        <window title="Transportrait" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" visibleAtLaunch="NO" animationBehavior="default" id="1">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+            <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
+            <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="128" y="256" width="720" height="480"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1920" height="1057"/>
+            <value key="minSize" type="size" width="720" height="480"/>
+            <view key="contentView" id="2">
+                <rect key="frame" x="0.0" y="0.0" width="720" height="480"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <imageView focusRingType="none" translatesAutoresizingMaskIntoConstraints="NO" id="163" customClass="ImageView">
+                        <rect key="frame" x="0.0" y="0.0" width="720" height="480"/>
+                        <imageCell key="cell" selectable="YES" editable="YES" focusRingType="none" alignment="left" imageScaling="proportionallyUpOrDown" id="164"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="163" firstAttribute="leading" secondItem="2" secondAttribute="leading" id="190"/>
+                    <constraint firstItem="163" firstAttribute="bottom" secondItem="2" secondAttribute="bottom" id="191"/>
+                    <constraint firstItem="163" firstAttribute="top" secondItem="2" secondAttribute="top" id="192"/>
+                    <constraint firstItem="163" firstAttribute="trailing" secondItem="2" secondAttribute="trailing" id="193"/>
+                </constraints>
+            </view>
+            <toolbar key="toolbar" implicitIdentifier="2D7E93B0-D400-41DD-BE06-FA5D08730DC2" autosavesConfiguration="NO" allowsUserCustomization="NO" displayMode="iconAndLabel" sizeMode="regular" id="68">
+                <allowedToolbarItems>
+                    <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="72"/>
+                    <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="77"/>
+                    <toolbarItem implicitItemIdentifier="A5664676-5A2B-4497-AA98-15C310BB84DF" label="" paletteLabel="" image="NSRightFacingTriangleTemplate" catalog="system" id="76">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="48" height="28"/>
+                        <size key="maxSize" width="50" height="30"/>
+                        <button key="view" verticalHuggingPriority="750" id="74">
+                            <rect key="frame" x="0.0" y="14" width="48" height="28"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSRightFacingTriangleTemplate" catalog="system" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="75">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                        <connections>
+                            <action selector="abstractImage:" target="-2" id="130"/>
+                            <binding destination="-2" name="enabled" keyPath="isAbstractable" id="389"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="EDC3C01C-B544-47F0-8BAA-745B9C3A2ABD" label="" paletteLabel="" image="NSRefreshTemplate" catalog="system" id="293">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="48" height="28"/>
+                        <size key="maxSize" width="50" height="30"/>
+                        <button key="view" verticalHuggingPriority="750" id="294">
+                            <rect key="frame" x="0.0" y="14" width="48" height="28"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <buttonCell key="cell" type="roundTextured" bezelStyle="texturedRounded" image="NSRefreshTemplate" catalog="system" imagePosition="overlaps" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="295">
+                                <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                <font key="font" metaFont="system"/>
+                            </buttonCell>
+                        </button>
+                        <connections>
+                            <action selector="revertImage:" target="-2" id="298"/>
+                            <binding destination="-2" name="enabled" keyPath="isAbstract" id="329"/>
+                        </connections>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="BF9E0273-A41F-48F0-BB56-ED89FD505CD3" label="Stylize" paletteLabel="Stylize" id="286">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="32" height="21"/>
+                        <size key="maxSize" width="104" height="36"/>
+                        <slider key="view" verticalHuggingPriority="750" id="284">
+                            <rect key="frame" x="0.0" y="14" width="104" height="25"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <sliderCell key="cell" state="on" alignment="left" maxValue="3" doubleValue="1.5" tickMarkPosition="above" sliderType="linear" id="285"/>
+                        </slider>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="611433DD-2AB6-4C0B-834F-5BB17C6509C6" label="Quantize" paletteLabel="Quantize" id="289">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="32" height="21"/>
+                        <size key="maxSize" width="104" height="36"/>
+                        <slider key="view" verticalHuggingPriority="750" id="287">
+                            <rect key="frame" x="0.0" y="14" width="104" height="21"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            <sliderCell key="cell" state="on" alignment="left" minValue="5" maxValue="15" doubleValue="10" tickMarkPosition="above" sliderType="linear" id="288"/>
+                        </slider>
+                    </toolbarItem>
+                    <toolbarItem implicitItemIdentifier="B7B71CC2-BD89-45C8-8A0A-2E11FB473942" label="" paletteLabel="" tag="-1" id="411">
+                        <nil key="toolTip"/>
+                        <size key="minSize" width="24" height="20"/>
+                        <size key="maxSize" width="160" height="32"/>
+                        <progressIndicator key="view" wantsLayer="YES" verticalHuggingPriority="750" maxValue="100" bezeled="NO" indeterminate="YES" style="bar" id="410">
+                            <rect key="frame" x="0.0" y="14" width="160" height="20"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        </progressIndicator>
+                    </toolbarItem>
+                </allowedToolbarItems>
+                <defaultToolbarItems>
+                    <toolbarItem reference="77"/>
+                    <toolbarItem reference="411"/>
+                    <toolbarItem reference="72"/>
+                    <toolbarItem reference="286"/>
+                    <toolbarItem reference="289"/>
+                    <toolbarItem reference="293"/>
+                    <toolbarItem reference="76"/>
+                    <toolbarItem reference="77"/>
+                </defaultToolbarItems>
+            </toolbar>
+            <connections>
+                <outlet property="delegate" destination="-2" id="4"/>
+            </connections>
+            <point key="canvasLocation" x="-139" y="90"/>
+        </window>
+    </objects>
+    <resources>
+        <image name="NSRefreshTemplate" catalog="system" width="11" height="15"/>
+        <image name="NSRightFacingTriangleTemplate" catalog="system" width="9" height="12"/>
+    </resources>
+</document>

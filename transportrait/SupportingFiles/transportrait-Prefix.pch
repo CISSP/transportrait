@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'Transportrait' target in the 'Transportrait' project
+//
+
+#ifdef __OBJC__
+	#import <Cocoa/Cocoa.h>
+#endif
